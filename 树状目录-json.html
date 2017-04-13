@@ -32,7 +32,7 @@ li,ul {list-style-type: none;}
     }
 
 printtree(DocTree,0); 
-//打印数组对象
+//打印数组对象 print array object
 function printtree(shuzu,i){
     if (shuzu.inistatue=="showmenu") {
      var picstatue="minus-"; 
@@ -51,7 +51,7 @@ function printtree(shuzu,i){
           if(shuzu.dtype=="f"){     
             i=i+1;        
            document.write(html1);
-           //关闭默认关闭的文件夹
+           //关闭默认关闭的文件夹 close default-closed folder
            if (shuzu.inistatue=="hidemenu") {
         $("ul."+shuzu.id).hide(0);
       }
@@ -61,7 +61,7 @@ function printtree(shuzu,i){
 			     document.write(""+html2);
           } 
       }
-   //遍历
+   //遍历 
       else if (o=="children") 
     	{
  		   traversaling(shuzu[o],i);     
@@ -69,7 +69,7 @@ function printtree(shuzu,i){
     }
     }
 
-   //遍历函数
+   //遍历函数 traverse function
       function traversaling(sonarray,a)
       {
         for (var i=0;i<sonarray.length;i++) 
@@ -79,18 +79,18 @@ function printtree(shuzu,i){
       document.write("</ul>");
       }
 
-	//隐藏显示子文件函数
+	//隐藏显示子文件函数 function of show the hidden sub-folder
       function changestatus(sid,stype,sname,imgid)
     {     //console.log(imgid);
           if (stype=="f") {
          var cname=document.getElementById(sid).className;  
-              //关闭开启的文件夹
+              //关闭开启的文件夹 close opened folder
              if (cname=="showmenu"){
               $("ul."+sid).hide(200);
               document.getElementById(sid).className="hidemenu";
               document.getElementById(imgid).src="plus+.png";
               }
-              //开启关闭的文件夹
+              //开启关闭的文件夹 open closed folder
              if(cname=="hidemenu"){
           	  $("ul."+sid).show(200);         
               document.getElementById(sid).className="showmenu";
